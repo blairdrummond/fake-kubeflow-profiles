@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: profiles
+  namespace: git
+  labels:
+    app: profiles
+spec:
+  selector:
+    matchLabels:
+      app: profiles
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: profiles
+    spec:
+      containers:
+      - name: profiles
+        image: gitserver-profiles:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 8080

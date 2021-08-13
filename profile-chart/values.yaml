@@ -1,0 +1,9 @@
+# Default values for profile.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# This is intentionally not a person who exists
+profileOwner: nobody@statcan.gc.ca
+
+name: profile
+owners: []

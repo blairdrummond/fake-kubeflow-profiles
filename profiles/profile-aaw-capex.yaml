@@ -1,8 +1,0 @@
-apiVersion: kubeflow.org/v1
-kind: Profile
-metadata:
-  name: fake-aaw-capex
-spec:
-  owner:
-    kind: User
-    name: nancy.badran@cloud.statcan.ca
