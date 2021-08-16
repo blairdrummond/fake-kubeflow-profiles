@@ -75,6 +75,16 @@ deploy: kind gitserver deploy-argocd profiles-crd
 port-forward:
 	kubectl port-forward -n argocd svc/argocd-server 8080:8080
 
+
+create-token:
+	mkdir -p ssh
+	@printf $(OKGREEN)
+	ssh-keygen -t ed25519 -C "nobody@statcan.gc.ca" -f ssh/argocd-profiles -q -N ""
+	@printf $(BOLD)
+	@echo "Copy the pubkey to the Github repo in the Deploy Keys section"
+	@echo "Copy the private key to ArgoCD"
+	@printf $(ENDC)
+
 ###                                .o88o.  o8o  oooo
 ###                                888 `"  `"'  `888
 ### oo.ooooo.  oooo d8b  .ooooo.  o888oo  oooo   888   .ooooo.   .oooo.o
